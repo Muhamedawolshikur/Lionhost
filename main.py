@@ -28,8 +28,8 @@ def keep_alive():
     t.start()
 
 # --- [ 2. CONFIGURATION ] ---
-API_TOKEN = "8568667849:AAHeNGRWRgNbbIuXnlu08BTAsLF7mUL1cEE"
-ADMIN_ID = 8700421304
+API_TOKEN = os.environ.get('API_TOKEN')
+ADMIN_ID = int(os.environ.get('ADMIN_ID', 8700421304))
 
 bot = telebot.TeleBot(API_TOKEN, parse_mode="HTML")
 BASE_DIR = "king_hosted_files"
